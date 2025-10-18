@@ -1,7 +1,6 @@
 package loading
 
 import (
-	"fmt"
 	"image"
 	_ "image/jpeg"
 	_ "image/png"
@@ -10,7 +9,7 @@ import (
 )
 
 func LoadImage(filePath string) (image.Image, error) {
-	fmt.Printf("Attempting to load image from %s\n", filePath)
+	log.Printf("Attempting to load image from %s\n", filePath)
 
 	reader, err := os.Open(filePath)
 	if err != nil {

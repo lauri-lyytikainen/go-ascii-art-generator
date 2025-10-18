@@ -4,14 +4,14 @@ import (
 	"fmt"
 	"github.com/lauri-lyytikainen/go-ascii-art-generator/internal/loading"
 	"github.com/lauri-lyytikainen/go-ascii-art-generator/internal/parameters"
+	"log"
 )
 
 func Convert(config *parameters.Config) {
 	fmt.Println(config)
 	m, err := loading.LoadImage(config.InputFile)
 	if err != nil {
-		fmt.Println(err)
-		panic("Loading image failed")
+		log.Panic(err)
 	}
-	fmt.Println(m.Bounds())
+	log.Println(m.Bounds())
 }
